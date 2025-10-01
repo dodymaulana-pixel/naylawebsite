@@ -1,0 +1,200 @@
+/* Palet Warna Lembut/Soft: 
+   #F0F8FF (AliceBlue) - Latar Belakang
+   #FFDAB9 (PeachPuff) - Aksen Lembut
+   #CFCFFF (Lavender) - Aksen Utama
+   #4A4E69 (Dark Slate Blue) - Teks
+*/
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #9816d4; /* Latar Belakang Sangat Pucat */
+    color: #000000; /* Warna Teks Utama */
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    color: #000000; /* Warna Heading Lebih Dalam tapi Lembut */
+    font-weight: 700;
+}
+
+header {
+    background-color: #ff63ed; /* Warna Header Soft Lavender */
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.nav-item {
+    color: #4A4E69;
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: background-color 0.3s, color 0.3s;
+    font-weight: 400;
+}
+
+.nav-item:hover {
+    background-color: #0f0412; /* Hover PeachPuff */
+    color: #600d55;
+}
+
+.nav-item.active {
+    background-color: #FFDAB9; /* Active PeachPuff */
+    font-weight: 700;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+main {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.content-section {
+    padding: 40px;
+    margin-bottom: 30px;
+    background-color: #FFFFFF; /* Konten Putih Bersih */
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.content-section.hidden {
+    display: none;
+}
+
+/* --- Bagian Home (Info Pribadi) --- */
+.profile-card {
+    text-align: center;
+}
+
+.profile-img img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #f218ce; /* Border Lembut */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.tagline {
+    font-style: italic;
+    color: #000000;
+}
+
+.contact-info {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #d700db;
+    border-radius: 8px;
+    display: inline-block;
+}
+
+/* --- Gaya Umum Detail --- */
+ul {
+    list-style-type: '🌸 '; /* Bullet point bunga */
+    padding-left: 20px;
+}
+
+.cv-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.cv-item {
+    padding: 20px;
+    border: 1px dashed #050105;
+    border-radius: 10px;
+}
+
+.full-cv-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* --- Sertifikat (Diatur 4 Kolom) --- */
+.certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Kunci: 4 Kolom */
+    gap: 15px; 
+}
+
+.cert-card {
+    padding: 10px; 
+    border: 1px dashed #000000;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cert-card img {
+    width: 100%; 
+    height: auto; 
+    max-height: 200px; /* Batasi tinggi maksimum */
+    border-radius: 8px;
+    object-fit: cover;
+    display: block; /* Penting untuk menghilangkan margin bawah default gambar */
+}
+
+
+/* --- Timeline Pendidikan --- */
+.timeline {
+    border-left: 2px solid #FFDAB9;
+    padding-left: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 20px;
+}
+
+.timeline-item::before {
+    content: '✨'; 
+    position: absolute;
+    left: -30px;
+    top: 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #ff05ff;
+    color: #4A4E69;
+    font-size: 0.9em;
+}
+
+/* Responsif */
+@media (max-width: 950px) {
+    /* Tablet: Sertifikat menjadi 2 kolom */
+    .certificates-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    /* Mobile: Semua menjadi 1 kolom */
+    nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .nav-item {
+        padding: 5px 10px;
+    }
+    
+    .cv-detail-grid, .certificates-grid {
+        grid-template-columns: 1fr; 
+    }
+}
